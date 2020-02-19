@@ -1,27 +1,27 @@
-def translate(number):
+def translate(binary):
     Binary_number = []
-    if number != 0:
-        while abs(number)>1:
-            if number%2 == 0:
+    if binary != 0:
+        while abs(binary)>1:
+            if binary%2 == 0:
                 Binary_number.append("0")
-                number = number/2
+                binary = binary/2
             else:
                 Binary_number.append("1")
-                number-=1
-                number = number /2
+                binary-=1
+                binary = binary /2
         Binary_number.append("1")
-    if number < 0:
+    if binary < 0:
         Binary_number.append("-")
     Binary_number.reverse()
-    if number == 0:
+    if binary == 0:
         Binary_number.append("0")
-    return Binary_number
+    binary_print = ''.join(Binary_number)
+    return binary_print
 
 while 1:
-    print("Send me a DECIMAL number for translate it on binary number")
+    print("Send me a DECIMAL binary for translate it on binary binary")
     decimal = int(input())
-    number = ''.join(translate(decimal))
-    print("Binary code is " + number)
-    if number == "0":
+    print("Binary code is " + translate(decimal))
+    if translate(decimal) == "0":
         print("End")
         break
